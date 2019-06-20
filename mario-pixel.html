@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			:root{
+				--hatColor:#f93801;
+				--hairColor:#b07f00;
+				--faceColor:#ffa248;
+				--eyeColor:#b07f00;
+				--clothColor:#b07f00;
+				--pantColor:#f93801;
+				--handColor:#ffa248;
+				--buttonColor:#ffa248;
+				--shoesColor:#b07f00
+			}
+			.mario-pixel{
+				font-size: 10px;
+				width:1em;
+				height:1em;
+				box-shadow: 4em 1em 0 0 var(--hatColor),5em 1em 0 0 var(--hatColor),6em 1em 0 0 var(--hatColor),7em 1em 0 0 var(--hatColor),8em 1em 0 0 var(--hatColor),
+				3em 2em 0 0 var(--hatColor),4em 2em 0 0 var(--hatColor),5em 2em 0 0 var(--hatColor),6em 2em 0 0 var(--hatColor),7em 2em 0 0 var(--hatColor),8em 2em 0 0 var(--hatColor),9em 2em 0 0 var(--hatColor),10em 2em 0 0 var(--hatColor),11em 2em 0 0 var(--hatColor),
+				3em 3em 0 0 var(--hairColor),4em 3em 0 0 var(--hairColor),5em 3em 0 0 var(--hairColor),6em 3em 0 0 var(--faceColor),7em 3em 0 0 var(--faceColor),8em 3em 0 0 var(--eyeColor),9em 3em 0 0 var(--faceColor),
+				2em 4em 0 0 var(--hairColor),3em 4em 0 0 var(--faceColor),4em 4em 0 0 var(--hairColor),5em 4em 0 0 var(--faceColor),6em 4em 0 0 var(--faceColor),7em 4em 0 0 var(--faceColor),8em 4em 0 0 var(--eyeColor),9em 4em 0 0 var(--faceColor),10em 4em 0 0 var(--faceColor),11em 4em 0 0 var(--faceColor),
+				2em 5em 0 0 var(--hairColor),3em 5em 0 0 var(--faceColor),4em 5em 0 0 var(--hairColor),5em 5em 0 0 var(--hairColor),6em 5em 0 0 var(--faceColor),7em 5em 0 0 var(--faceColor),8em 5em 0 0 var(--faceColor),9em 5em 0 0 var(--hairColor),10em 5em 0 0 var(--faceColor),11em 5em 0 0 var(--faceColor),12em 5em 0 0 var(--faceColor),
+				2em 6em 0 0 var(--hairColor),3em 6em 0 0 var(--hairColor),4em 6em 0 0 var(--faceColor),5em 6em 0 0 var(--faceColor),6em 6em 0 0 var(--faceColor),7em 6em 0 0 var(--faceColor),8em 6em 0 0 var(--hairColor),9em 6em 0 0 var(--hairColor),10em 6em 0 0 var(--hairColor),11em 6em 0 0 var(--hairColor),
+				4em 7em 0 0 var(--faceColor),5em 7em 0 0 var(--faceColor),6em 7em 0 0 var(--faceColor),7em 7em 0 0 var(--faceColor),8em 7em 0 0 var(--faceColor),9em 7em 0 0 var(--faceColor),10em 7em 0 0 var(--faceColor),
+				3em 8em 0 0 var(--clothColor),4em 8em 0 0 var(--clothColor),5em 8em 0 0 var(--pantColor),6em 8em 0 0 var(--clothColor),5em 8em 0 0 var(--pantColor),6em 8em 0 0 var(--clothColor),7em 8em 0 0 var(--clothColor),8em 8em 0 0 var(--clothColor),
+				2em 9em 0 0 var(--clothColor),3em 9em 0 0 var(--clothColor),4em 9em 0 0 var(--clothColor),5em 9em 0 0 var(--pantColor),6em 9em 0 0 var(--clothColor),5em 9em 0 0 var(--pantColor),6em 9em 0 0 var(--clothColor),7em 9em 0 0 var(--clothColor),8em 9em 0 0 var(--pantColor),9em 9em 0 0 var(--clothColor),10em 9em 0 0 var(--clothColor),11em 9em 0 0 var(--clothColor),
+				1em 10em 0 0 var(--clothColor),2em 10em 0 0 var(--clothColor),3em 10em 0 0 var(--clothColor),4em 10em 0 0 var(--clothColor),5em 10em 0 0 var(--pantColor),6em 10em 0 0 var(--pantColor),5em 10em 0 0 var(--pantColor),6em 10em 0 0 var(--pantColor),7em 10em 0 0 var(--pantColor),8em 10em 0 0 var(--pantColor),9em 10em 0 0 var(--clothColor),10em 10em 0 0 var(--clothColor),11em 10em 0 0 var(--clothColor),12em 10em 0 0 var(--clothColor),
+				1em 11em 0 0 var(--handColor),2em 11em 0 0 var(--handColor),3em 11em 0 0 var(--clothColor),4em 11em 0 0 var(--pantColor),5em 11em 0 0 var(--buttonColor),6em 11em 0 0 var(--pantColor),7em 11em 0 0 var(--pantColor),8em 11em 0 0 var(--buttonColor),9em 11em 0 0 var(--pantColor),10em 11em 0 0 var(--clothColor),11em 11em 0 0 var(--handColor),12em 11em 0 0 var(--handColor),
+				1em 12em 0 0 var(--handColor),2em 12em 0 0 var(--handColor),3em 12em 0 0 var(--handColor),4em 12em 0 0 var(--pantColor),5em 12em 0 0 var(--pantColor),6em 12em 0 0 var(--pantColor),7em 12em 0 0 var(--pantColor),8em 12em 0 0 var(--pantColor),9em 12em 0 0 var(--pantColor),10em 12em 0 0 var(--handColor),11em 12em 0 0 var(--handColor),12em 12em 0 0 var(--handColor),
+				1em 13em 0 0 var(--handColor),2em 13em 0 0 var(--handColor),3em 13em 0 0 var(--pantColor),4em 13em 0 0 var(--pantColor),5em 13em 0 0 var(--pantColor),6em 13em 0 0 var(--pantColor),7em 13em 0 0 var(--pantColor),8em 13em 0 0 var(--pantColor),9em 13em 0 0 var(--pantColor),10em 13em 0 0 var(--pantColor),11em 13em 0 0 var(--handColor),12em 13em 0 0 var(--handColor),
+				3em 14em 0 0 var(--pantColor),4em 14em 0 0 var(--pantColor),5em 14em 0 0 var(--pantColor),8em 14em 0 0 var(--pantColor),9em 14em 0 0 var(--pantColor),10em 14em 0 0 var(--pantColor),
+				2em 15em 0 0 var(--shoesColor),3em 15em 0 0 var(--shoesColor),4em 15em 0 0 var(--shoesColor),9em 15em 0 0 var(--shoesColor),10em 15em 0 0 var(--shoesColor),11em 15em 0 0 var(--shoesColor),
+				1em 16em 0 0 var(--shoesColor),2em 16em 0 0 var(--shoesColor),3em 16em 0 0 var(--shoesColor),4em 16em 0 0 var(--shoesColor),9em 16em 0 0 var(--shoesColor),10em 16em 0 0 var(--shoesColor),11em 16em 0 0 var(--shoesColor),12em 16em 0 0 var(--shoesColor)
+			}
+		</style>
+	</head>
+	<body>
+		<div>it's me Mio</div>
+		<!--红色：#f93801 棕色：#b07f00 肉色：#ffa248-->
+		<div class='mario-pixel'></div>
+		
+	</body>
+</html>
