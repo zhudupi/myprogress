@@ -9,8 +9,14 @@
 		<script type="text/javascript">
 			var dcvs=document.getElementById('pixel-cvs')
 			var pcvs=dcvs.getContext('2d');
+//			var dcvs_=dcvs.cloneNode();
+//			var pcvs_=dcvs.getContext('2d');
+//			console.log(dcvs_)
 			var gridX=10,gridY=10;
 			var dotColor='#444',lineColor='#ccc';
+//			按color分组
+			var girdColors={};
+			
 			function drawGrid(w=50,h=50){
 				
 				pcvs.strokeStyle=lineColor;
@@ -28,13 +34,21 @@
 				}
 			}
 			drawGrid()
+			function fillGrid(){
+				
+			}
 			function colorDot(e){
-				console.log('在画了')
+				var C=dotColor;
+				if(!girdColors[C]){
+					girdColors[C]=new Set()
+				}
+				
 				var dX=dcvs.offsetLeft,dY=dcvs.offsetTop;
 				var x=e.clientX,y=e.clientY;
 				var row=Math.floor((x-dX)/10),
 					col=Math.floor((y-dY)/10);
-					console.log(dX+','+x)
+					girdColors[C].add([row,col])
+					//数组是指针，所以在set里面不会查重。。。
 				pcvs.fillStyle=dotColor;
 				pcvs.fillRect(row*gridX,col*gridY,gridX,gridY)
 			}

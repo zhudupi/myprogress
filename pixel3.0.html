@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="pixel-cvs" width="500" height="500"></canvas>
+		<script type="text/javascript">
+			var dcvs=document.getElementById('pixel-cvs')
+			var pcvs=dcvs.getContext('2d');
+//			var dcvs_=dcvs.cloneNode();
+//			var pcvs_=dcvs.getContext('2d');
+//			console.log(dcvs_)
+			var gridX=10,gridY=10;//每个格子宽10像素
+			var w=50,h=50;//横向50格,竖向50格
+			var dotColor='#444',lineColor='#ccc';
+			var randomColor='#fff';
+//			给每个格子分配颜色；
+			var gridColors={};
+			
+			function drawGrid(w=50,h=50){
+				pcvs.clearRect(0,0,dcvs.width,dcvs.height)
+				for(let row in gridColors){
+					for(let col in gridColors[row]){
+						pcvs.beginPath()
+						pcvs.fillStyle=gridColors[row][col];
+						pcvs.fillRect(row*gridX,col*gridY,gridX,gridY)
+					}
+					
+				}
+				pcvs.strokeStyle=lineColor;
+				for(let i=0;i<=w;i++){
+					pcvs.beginPath()
+					pcvs.moveTo(i*gridX,0)
+					pcvs.lineTo(i*gridX,h*gridY)
+					pcvs.stroke();
+				}
+				for(let i=0;i<=h;i++){
+					pcvs.beginPath()
+					pcvs.moveTo(0,i*gridY)
+					pcvs.lineTo(w*gridX,i*gridY)
+					pcvs.stroke();
+				}
+				
+			}
+			drawGrid()
+			
+			function colorDot(e){
+				var C=dotColor;
+				
+				
+				var dX=dcvs.offsetLeft,dY=dcvs.offsetTop;
+				var x=e.clientX,y=e.clientY;
+				var row=Math.floor((x-dX)/10),
+					col=Math.floor((y-dY)/10);
+				if(!gridColors[row]){
+					gridColors[row]=new Object()
+				}
+				gridColors[row][col]=randomColor;
+//				console.log(gridColors)
+//				pcvs.fillStyle=dotColor;
+//				pcvs.fillRect(row*gridX,col*gridY,gridX,gridY)
+				drawGrid()
+				return [row,col]
+			}
+//			鼠标悬浮显示格子,太难写了先不写了
+//			function showCoord(e){
+//				var dX=dcvs.offsetLeft,dY=dcvs.offsetTop;
+//				var x=e.clientX,y=e.clientY;
+//				setTimeout()
+//			}
+//			
+//			dcvs.onmouseenter=(e)=>{
+//				showCoord(e)
+//			}
+			dcvs.onmousedown=(e)=>{
+				randomColor='#'+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16);;
+				console.log(randomColor)
+				
+//				var oldCoord=colorDot(e)
+//				setTimeout(()=>{
+//					var newCoord=colorDot(e)
+//					if(oldCoord[0]==newCoord[0]&&oldCoord[1]==newCoord[1]){
+//						
+//					}
+//				},1000)
+				document.body.onmousemove=(e)=>{
+					colorDot(e)
+					var dX=dcvs.offsetLeft,dY=dcvs.offsetTop;
+					var x=e.clientX,y=e.clientY;
+					if(x<dX||y<dY||x>dX+dcvs.width||y>dY+dcvs.height){
+						dcvs.onmouseup()
+					}
+				}
+			}
+			dcvs.onmouseup=(e)=>{
+				document.body.onmousemove=null;
+				
+			}
+		</script>
+	</body>
+</html>
